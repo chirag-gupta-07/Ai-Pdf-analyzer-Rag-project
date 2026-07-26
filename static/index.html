@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PDF Reader | Premium</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <h2>AI PDF Reader</h2>
+            </div>
+            
+            <div class="upload-section">
+                <h3>Document Setup</h3>
+                <p>Upload a new PDF to begin chatting. This will replace the current active document.</p>
+                
+                <form id="upload-form" class="upload-area">
+                    <input type="file" id="pdf-upload" accept=".pdf" hidden />
+                    <label for="pdf-upload" class="upload-label">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span id="file-name">Click to browse PDF</span>
+                    </label>
+                    <button type="submit" id="upload-btn" class="btn primary-btn" disabled>
+                        <span>Initialize AI</span>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </button>
+                </form>
+                <div id="upload-status" class="status-message hidden">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i> Processing...
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <header class="chat-header">
+                <div class="active-doc-indicator">
+                    <span class="status-dot"></span>
+                    <span id="active-doc-name">No document uploaded yet</span>
+                </div>
+            </header>
+
+            <div class="chat-history" id="chat-history">
+                <div class="welcome-screen">
+                    <div class="welcome-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h1>Welcome to AI PDF Reader</h1>
+                    <p>Upload a PDF document from the sidebar to start asking questions.</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <form id="chat-form">
+                    <div class="input-wrapper">
+                        <input type="text" id="chat-input" placeholder="Ask anything about your document..." autocomplete="off" disabled />
+                        <button type="submit" id="send-btn" class="btn icon-btn" disabled>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
