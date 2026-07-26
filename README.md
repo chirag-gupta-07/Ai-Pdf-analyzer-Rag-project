@@ -1,5 +1,7 @@
 # AI PDF Analyzer (RAG Project)
 
+**🌟 Live Demo:** [https://ai-pdf-analyzer-epbj.onrender.com](https://ai-pdf-analyzer-epbj.onrender.com)
+
 A powerful, full-stack web application that allows users to upload PDF documents and chat with them using Advanced Retrieval-Augmented Generation (RAG). Built with a blazing fast FastAPI backend and a premium, responsive frontend.
 
 ## Features
