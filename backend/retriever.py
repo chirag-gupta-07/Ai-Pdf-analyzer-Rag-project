@@ -8,7 +8,7 @@ from rich import print
 import os
 def retriever():
     embedding_model = MistralAIEmbeddings(
-        model="mistral-embed-2312"
+        model="mistral-embed"
     )
 
     db_path = os.environ.get("CHROMA_DB_PATH", "vector_db/test")
@@ -20,9 +20,9 @@ def retriever():
     retriever = vector_store.as_retriever(
         search_type = "mmr",
         search_kwargs = {
-            "k" : 25,
-            "fetch_k":50,
-            "lambda_mult" :0.5
+            "k" : 4,
+            "fetch_k": 20,
+            "lambda_mult" : 0.5
         }
     )
 
