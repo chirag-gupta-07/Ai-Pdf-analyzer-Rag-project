@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
@@ -59,7 +62,15 @@ async def upload_file(file: UploadFile = File(...)):
 async def chat(request: ChatRequest):
     try:
         response = chain().invoke(request.query)
-        return {"answer": response.content}
+        content = response.content
+        if isinstance(content, list):
+            answer = "".join(
+                item.get("text", "") if isinstance(item, dict) else str(item)
+                for item in content
+            )
+        else:
+            answer = str(content)
+        return {"answer": answer}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

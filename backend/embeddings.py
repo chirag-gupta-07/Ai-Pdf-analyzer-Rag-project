@@ -12,7 +12,8 @@ def create_embeddings(file_path):
     chunks = splitter(docs)
 
     embedding_model = GoogleGenerativeAIEmbeddings(
-        model="models/text-embedding-004"
+        model="models/gemini-embedding-001",
+        google_api_key=os.getenv("GOOGLE_API_KEY")
     )
 
     db_path = os.environ.get("CHROMA_DB_PATH", "vector_db/test")
