@@ -8,19 +8,19 @@ A powerful, full-stack web application that allows users to upload PDF documents
 
 - **Premium Web UI**: A beautiful dark-mode interface with glassmorphism, micro-animations, and markdown rendering.
 - **Dynamic Document Processing**: Upload a PDF and it's instantly embedded and ready for chat. Uploading a new PDF safely clears out the old local embeddings.
-- **Intelligent RAG System**: Powered by Langchain, ChromaDB, and Mistral AI for accurate, context-aware answers.
+- **Intelligent RAG System**: Powered by Langchain, ChromaDB, and Google Gemini for fast, context-aware answers.
 - **Smart Formatting**: The AI assistant behaves as a professional Document Analyst and outputs beautiful markdown-formatted text.
 
 ## Tech Stack
 
 - **Backend**: FastAPI, Python
-- **AI/ML Engine**: Langchain, Mistral AI (LLM & Embeddings), Chroma (Vector Database)
+- **AI/ML Engine**: Langchain, Google Gemini (`models/text-embedding-004` & `gemini-1.5-flash`), Chroma (Vector Database)
 - **Frontend**: Vanilla HTML5, CSS3, JavaScript, Marked.js (for markdown rendering)
 
 ## Prerequisites
 
 - Python 3.9+
-- A [Mistral AI API Key](https://console.mistral.ai/)
+- A [Google AI Studio API Key](https://aistudio.google.com/) (Free)
 
 ## Installation & Setup
 

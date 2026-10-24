@@ -2,13 +2,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from langchain_chroma import Chroma
-from langchain_mistralai import MistralAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from rich import print
 
 import os
 def retriever():
-    embedding_model = MistralAIEmbeddings(
-        model="mistral-embed"
+    embedding_model = GoogleGenerativeAIEmbeddings(
+        model="models/text-embedding-004"
     )
 
     db_path = os.environ.get("CHROMA_DB_PATH", "vector_db/test")
